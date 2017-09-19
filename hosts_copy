@@ -42,3 +42,10 @@
 
 ## db-[99:101]-node.example.com
 
+
+[webservers]
+10.0.3.251
+10.0.3.75
+
+[databases]
+10.0.3.243
