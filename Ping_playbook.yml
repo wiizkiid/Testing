@@ -1,0 +1,9 @@
+---
+
+#Simple ping playbook
+- hosts: all
+
+Tasks:
+
+  name: Ping
+  -ping:
