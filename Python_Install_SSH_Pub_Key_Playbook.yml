@@ -11,16 +11,18 @@
 #This will become the root user
   become_user: root
 #Escalates the user level to root 
-   become_method:sudo
+  become_method: sudo
 
    
 #Tasks start with a name and '-' (indentation matters). The name is just a description and raw is the actual task. '||' means OR, so if the below statement fails then it will install python 
 
- - name: Install Python 2
-   raw: test -e /usr/bin/python || (apt-get update && apt-get install -y python)
+  tasks:
+
+  - name: Install Python 2
+    raw: test -e /usr/bin/python || (apt-get update && apt-get install -y python)
   
  #This will locate and use the public key as authorised 
   - name: Authorized keys
-    authorized_key: user=root
+    authorized_key: user=ubuntu
                     exclusive=no
-                    key="{{ lookup('file', '~/ssh/id_rsa.pub') }}"
+                    key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
