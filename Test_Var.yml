@@ -1,0 +1,9 @@
+---
+
+Port_Channel1: Port-channel1.344
+PC1_Description: TEST_INSIDE
+PC1_VLAN: 344
+
+Port_Channel2: Port-channel1.344
+PC2_Description: TEST_OUTSIDE
+PC2_VLAN: 344
